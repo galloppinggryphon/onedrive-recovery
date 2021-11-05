@@ -1,0 +1,192 @@
+.json-viewer {
+	font-family: "Source Code Pro", monospace;
+	font-size: 16px;
+}
+
+
+.json-viewer-container {
+	padding-left: 10px;
+	padding-bottom: 20px;
+}
+
+.json__collapsed-ui {
+	display: flex;
+	padding: 10px 0;
+	justify-content: space-between;
+}
+.json__collapsed-ui > * {
+	/* height: 25px; */
+	margin: auto;
+}
+
+.json-viewer--root-collapsed .json-viewer-container {
+	display: none;
+}
+
+.json__collapsed-ui > .json__collapse-button {
+	flex: 0 0 auto;
+	align-self: flex-end;
+
+	z-index: 1;
+}
+
+.json__collapsed-ui > .json__json-preview {
+	display: block;
+	flex: 1;
+	min-height: 1rem;
+	line-height: 25px;
+	height: 25px;
+	overflow: hidden;
+	white-space: nowrap;
+	padding-left: 40px;
+	text-overflow: ellipsis;
+	cursor: pointer;
+
+}
+
+.json__json-preview::before {
+	content: "-";
+	display: block;
+	position: absolute;
+	/* bottom: 0; */
+	top: 0;
+	left: 0px;
+	line-height: 25px;
+	width: 25px;
+	background-color:darkorchid;
+	color: white;
+	text-align: center;
+	border-radius: 50%;
+}
+.json-viewer--root-collapsed .json__json-preview::before {
+	content: "+";
+	background-color: orchid;
+}
+.json__json-preview:hover::before {
+	background-color:slategray;
+}
+
+.json__collapsed-ui > .json__expand-root {
+	background-color: #f2f2f2;
+	border-radius: 50%;
+	margin-right: 40px;
+	/* padding: 10px; */
+	display: none;
+}
+.json__json-preview > .json__item {
+	display: flow-root;
+}
+
+.json__json-preview .json__wrapper {
+	margin: 0;
+}
+
+.json__json-preview .json__key {
+	display: none !important;
+}
+
+.json__item {
+	display: none;
+	padding-left: 10px;
+	outline-offset: -3px;
+}
+
+.json__item[data-level="1"]:hover {
+	background-color:rgb(245, 245, 245);
+	outline: 3px solid rgba(0,0,0,0.1);
+}
+.json__item[data-selected="true"] .json--is-collapsible::before  {
+	background-color:rgba(0,0,0,0.5);
+	color: white;
+}
+.json__item[data-selected="true"] {
+	background-color:rgb(204, 195, 255);
+}
+.json-viewer-container > .json__item {
+	display: block;
+}
+
+
+.json__wrapper {
+	margin-top: 10px;
+	padding-left: 30px;
+}
+
+.json--is-collapsible {
+	/* cursor: pointer; */
+	overflow: hidden;
+	position: relative;
+}
+
+.json--is-collapsible:hover > .json__key,
+.json--is-collapsible:hover > .json__value {
+	text-decoration: underline;
+}
+
+.json--is-collapsible::before {
+	content: "+";
+	position: absolute;
+	left: 0px;
+	top: 2px;
+	font-weight: bold;
+	cursor: pointer;
+	width: 20px;
+	line-height: 20px;
+	background-color: lightsteelblue;
+	color: white;
+	border-radius: 50%;
+	text-align: center;
+}
+
+.json-viewer .json--is-collapsible:hover::before {
+	background-color: palevioletred;
+}
+
+.json--is-collapsible::after {
+	background-color: lightgrey;
+	content: "";
+	height: 100%;
+	left: 9px;
+	position: absolute;
+	top: 26px;
+	width: 1px;
+}
+
+.json__toggle {
+	display: none;
+}
+.json__toggle:checked ~ .json__wrapper > .json__item {
+	display: block;
+}
+
+.json__toggle:checked ~ .json__wrapper > .json__item {
+	display: block;
+}
+
+.json__toggle:checked ~ .json--is-collapsible::before {
+	content: "-";
+}
+
+.json__key {
+	color: darkblue;
+	display: inline;
+}
+.json__key::after {
+	content: ": ";
+}
+
+.json__value {
+	display: inline;
+}
+
+.json__value--string {
+	color: green;
+}
+
+.json__value--number {
+	color: blue;
+}
+
+.json__value--boolean {
+	color: red;
+}

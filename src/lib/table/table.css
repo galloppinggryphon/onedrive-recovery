@@ -1,0 +1,39 @@
+/* .dataTables_length select,
+.dataTables_wrapper input {
+	background-color: #f9f9f9;
+	border: 1px solid #999;
+	border-radius: 4px;
+	/* height: 2rem; */
+	/* color: #333;
+}
+
+.dataTables_length,
+.dataTables_filter {
+	margin-top: 30px;
+	margin-right: 20px;
+	margin-bottom: 10px;
+	display: inline-flex;
+}  */
+
+
+div.dataTables_info-z,
+div.dataTables_length {
+	float: left;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+div.dataTables_paginate-x,
+div.dataTables_filter {
+	float: right;
+	margin-bottom: 20px;
+	margin-top: 20px !important;
+}
+
+div.dataTables_info {
+	float: left;
+}
+
+/* div.dataTables_paginate {
+	/* float: left; */
+	/* display: inline-block; */
+/* } */

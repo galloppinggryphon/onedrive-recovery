@@ -1,0 +1,26 @@
+{
+	"name": "onedrive-recovery",
+	"version": "0.0.1",
+	"author": "Bjornar Egede-Nissen",
+	"license": "Unlicense",
+	"description": "",
+	"type": "module",
+	"dependencies": {
+		"@azure/msal-browser": "^2.18.0",
+		"@microsoft/microsoft-graph-client": "^3.0.0",
+		"dateformat": "^5.0.2",
+		"http-server": "^13.0.2"
+	},
+	"devDependencies": {
+		"css-loader": "^6.5.0",
+		"html-webpack-plugin": "^5.5.0",
+		"style-loader": "^3.3.1",
+		"webpack": "^5.61.0",
+		"webpack-cli": "^4.9.1"
+	},
+	"scripts": {
+		"start": "npx http-server ./web --cors",
+		"build": "webpack",
+		"watch": "webpack --watch"
+	}
+}
